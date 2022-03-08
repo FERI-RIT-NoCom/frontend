@@ -8,7 +8,7 @@
 - Filtriranje komentarjev.<br>
 
 **Implementation in the frontend will include the following:**<br>
-- Creating pages (home apge, about us...).<br>
+- Creating pages (home page, about us...).<br>
 - Creating users (registration)<br>
 - Gathering comments.<br>
 - Liking comments.<br>
