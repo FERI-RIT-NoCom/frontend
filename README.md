@@ -1,10 +1,10 @@
 # frontend
 
 **V frontend-u bo implementirano:**<br>
-- Kreiranje strani (domaca stran, about us stran...).<br> 
+- Kreiranje strani (domača stran, about us stran...).<br> 
 - Kreiranje uporabnikov.<br>
 - Pridobivanje komentarjev.<br>
-- Vseckanje komentarjev.<br>
+- Všečkanje komentarjev.<br>
 - Filtriranje komentarjev.<br>
 
 **Implementation in the frontend will include the following:**<br>
