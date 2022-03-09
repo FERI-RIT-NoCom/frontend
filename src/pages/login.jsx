@@ -1,8 +1,11 @@
 import '../styles/login.css'
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import {loginUser} from "../services/auth";
 
 export const Login = () => {
+  const [username, setUsername] = useState({});
+  const [password, setPassword] = useState({});
   const [errorMessages, setErrorMessages] = useState({});
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -14,6 +17,8 @@ export const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
+
+    loginUser(username, password)
   }
 
   return (
@@ -22,8 +27,20 @@ export const Login = () => {
         <h3 className={"text-3xl tracking-wide text-center"}>Good to see you again! 👋</h3>
 
         <form className={"flex flex-col mx-14 mt-2"} onSubmit={submitHandler}>
-          <input className={"login-input"} type={"email"} placeholder={"Email"}/>
-          <input className={"login-input"} type={"password"} placeholder={"Password"}/>
+          <input
+            className={"login-input"}
+            type={"text"}
+            placeholder={"Username"}
+            required={true}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            className={"login-input"}
+            type={"password"}
+            placeholder={"Password"}
+            required={true}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
           <Link to={""} className={"text-purple-600 text-sm my-2"}>Forgot Password?</Link>
 
