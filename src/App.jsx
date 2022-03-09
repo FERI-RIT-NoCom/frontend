@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
+    <div className="App h-96">
       <header className="App-header">
         <Link to={"/login"}>Login</Link>
         <img src={logo} className="App-logo" alt="logo" />
