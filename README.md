@@ -7,7 +7,7 @@
 - Všečkanje komentarjev<br>
 - Filtriranje komentarjev<br>
 
-**Implementation in the frontend will include the following:**<br>
+**Implementation in the front-end will include the following:**<br>
 - Creating pages (home page, about us...)<br>
 - Creating users (registration)<br>
 - Gathering comments<br>
