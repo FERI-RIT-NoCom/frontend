@@ -1,24 +1,30 @@
 import '../styles/login.css'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import {loginUser} from "../services/auth";
 
 export const Login = () => {
+  const navigate = useNavigate()
   const [username, setUsername] = useState({});
   const [password, setPassword] = useState({});
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   // Generate jsx error message
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
+  const renderErrorMessage = () =>
+    errorMessage != null && (
+      <div className="text-red-500">{errorMessage}</div>
     );
 
   const submitHandler = (e) => {
     e.preventDefault()
+    // Clear error messages
+    setErrorMessage(null)
 
-    loginUser(username, password)
+    loginUser(username, password).then(res => {
+      navigate('/', {replace: true})
+    }).catch((err) => {
+      setErrorMessage(err)
+    })
   }
 
   return (
@@ -26,6 +32,8 @@ export const Login = () => {
       <h3 className={"text-3xl tracking-wide text-center"}>Good to see you again! 👋</h3>
 
       <form className={"flex flex-col space-y-2 mt-2 max-w-sm"} onSubmit={submitHandler}>
+        {renderErrorMessage()}
+
         <input
           className={"login-input"}
           type={"text"}
@@ -49,8 +57,8 @@ export const Login = () => {
         >
           Login
         </button>
-        <p className={"self-center text-sm mt-2"}>New? Register <Link to={"/register"}
-                                                                      className={"text-purple-600"}>here</Link></p>
+        <p className={"self-center text-sm mt-2"}>
+          New? Register <Link to={"/register"} className={"text-purple-600"}>here</Link></p>
       </form>
     </div>
   )
