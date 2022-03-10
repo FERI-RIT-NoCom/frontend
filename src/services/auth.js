@@ -10,6 +10,8 @@ export const loginUser = async (username, password) => {
 
         resolve(res.data)
       }
+
+      reject("Error processing login request")
     }).catch((err) => {
       reject(err.response.data)
     })
@@ -17,5 +19,15 @@ export const loginUser = async (username, password) => {
 }
 
 export const registerUser = (username, email, password) => {
-  // TODO: Register handler
+  return new Promise((resolve, reject) => {
+    axios.post(`${API_URL}/register`, {username, email, password}).then((res) => {
+      if (res.status === 200) {
+        resolve(res.data)
+      }
+
+      reject("Error processing register request")
+    }).catch((err) => {
+      reject(err.response.data)
+    })
+  })
 }
