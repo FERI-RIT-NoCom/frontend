@@ -10,6 +10,7 @@ function App() {
     <div className="App h-96">
       <header className="App-header">
         <Link to={"/login"}>Login</Link>
+        <Link to={"/about"}>About</Link>
         <img src={logo} className="App-logo" alt="logo" />
         <p className={"text-3xl font-bold underline tracking-widest border p-4"}>Hello Vite + React!</p>
         <p>
