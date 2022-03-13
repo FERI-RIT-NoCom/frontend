@@ -5,7 +5,8 @@ import App from './App'
 import {MemoryRouter, Route, Routes} from "react-router-dom";
 import {Login} from "./pages/login";
 import {Register} from "./pages/register";
-import { Comments } from "./pages/comments";
+import {Comments} from "./pages/comments";
+import {AddComment} from "./pages/addComment";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +15,7 @@ ReactDOM.render(
         <Route path={"/register"} element={<Register/>}/>
         <Route path={"/login"} element={<Login/>}/>
         <Route path={"/comments"} element={<Comments/>}/>
-        <Route path={"/addComment"} element={<Login/>}/>
+        <Route path={"/addComment"} element={<AddComment/>}/>
         <Route path={"/"} element={<App/>}/>
       </Routes>
     </MemoryRouter>
