@@ -1,0 +1,45 @@
+.mainImg {
+    margin-top: 2%;
+    object-fit: cover;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2%;
+}
+
+.mainDiv {
+    background: #282c34;
+}
+
+.fotter{
+    padding: 2%;
+    background: #111;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    font-size: xx-large;
+    color: honeydew;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title{
+    font-size: x-large;
+    color: mediumpurple;
+}
+
+.text-area{
+    align-items: center;
+    margin-top: 2%;
+    color: honeydew;
+    padding: 2.5%;
+}
+
